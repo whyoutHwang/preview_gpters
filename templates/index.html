@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Airtable Data Display</title>
+</head>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+        background-color: #ADD8E6;
+        color: #000000;
+        background-image: url('assets/123214.png'); /* Add this line */
+        text-align: right;
+        padding: 50px;
+        width: 500px;
+        height: 500px;
+    }
+    .title {
+      font-size: 2em;
+      font-weight: bold;
+    }
+    .subtitle {
+      font-size: 1.5em;
+    }
+    .profile-pic {
+      border-radius: 50%;
+    }
+    .footer {
+      font-size: 1em;
+    }
+    .with {
+      font-size: 0.8em;
+      color: #808080; /* Grey */
+    }
+    .logo {
+        color: #000;
+        font-family: Clash Grotesk;
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        position: fixed;
+    top: 26px;
+    left: 43px;
+    }
+  </style>
+<body>
+    {% if data %}
+        <div class="container">
+            <div>
+                <div class="logo">GPTers</div>
+                <div class="tag">
+                    <img src="./assets/tag.svg">
+                </div>
+            </div>
+            <div class="title">{{ data['제목'] }}</div>
+            <div class="subtitle">{{ data['부제'] }}</div>
+            <img src="path-to-profile-picture.jpg" alt="Profile Picture" class="profile-pic">
+            <div class="footer">
+            <span>Footer Text Here</span>
+            <br>
+            <span class="with">with {{data['파트너']}}</span>
+            </div>
+        </div>
+        <!-- <div style="width: 1049px; height: 1049px; background-image: url('./assets/123214.png');">
+            <img src="../assets/tag.svg" width="30px" height="30px" alt="">
+            <div style="display: flex;
+            flex-direction: column;">
+                <div style="font-family: Gmarket Sans TTF;
+                font-size: 121px;
+                font-weight: 700;
+                line-height: 120px;
+                letter-spacing: 0em;
+                text-align: left;
+                ">{{ data['제목'] }}</div>
+                <div style="    margin-top: 179px;">{{ data['부제'] }}</div>
+                <div style="    margin-top: 113px;">with {{data['파트너']}}</div>
+            </div>
+            <div style="width: 100%; display: flex; margin-top: 102px;">
+                <div>
+                    지티터스
+                </div>
+                <div style="height: 1px; width: 100%;background-color: #000;">
+
+                </div>
+                <img src="../assets/footer_tag.svg">
+            </div>
+        </div>
+         -->
+        
+        <!-- <p><strong>스터디 1줄 소개:</strong> {{ data['스터디 1줄 소개 - 무엇을 얻어갈 수 있나요?'] }}</p>
+        <p><strong>추천 대상:</strong> {{ data['이런 분에게 추천해요!'] }}</p>
+        <p><strong>발표주제:</strong> {{ data['발표주제'] }}</p>
+        <p><strong>프로필:</strong> {{ data['프로필'] }}</p>
+        <p><strong>줌 이메일 주소:</strong> {{ data['줌 이메일 주소'] }}</p>
+        <p><strong>요일:</strong> {{ data['요일'] | join(', ') }}</p>
+        <p><strong>난이도:</strong> {{ data['난이도'] }}</p>
+        <p><strong>추가 이벤트:</strong> {{ data['\\x08스터디에서 추가로 진행해보고 싶은 이벤트가 있나요?'] }}</p>
+
+        {% if data['파트너님 프로필 사진'] %}
+            <img src="{{ data['파트너님 프로필 사진'][0]['url'] }}" alt="Profile Picture"> -->
+        {% endif %}
+    {% else %}
+        <p>데이터가 없습니다.</p>
+    {% endif %}
+</body>
+</html>
